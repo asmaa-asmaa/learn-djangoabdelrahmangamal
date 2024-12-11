@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+<!-- <h1>template pages</h1> -->
+<!-- name = {{name | capfirst}} age= {{age}} -->
+<!-- <h2>name = {{name|default:'not found'}}</h2> -->
+<!-- <h2>name = {{name|slice:':6'}}</h2> -->
+<!-- <h2>name = {{name|length}}</h2> -->
+<!-- <h2>name = {{name|add:' mohamed '}}</h2> -->
+<!-- <h2>name = {{name|cut:' '}}</h2> -->
+<!-- <h2>name = {{name|cut:'m'}}</h2> -->
+<!-- <h2>age = {{age|filesizeformat}}</h2> -->
+{% load static %} {% block content %}
+<h1>index</h1>
+{% if name == 'asmaa'%}
+<p>welcome</p>
+{% elif name == 'ali'%}
+<p>hello</p>
+{% else %}
+<p>not found</p>
+{% endif %} {% for l in name %}
+<p>{{l}}</p>
+{% endfor %}
+<img
+  width="50px"
+  height="50px"
+  src="{% static 'images/flat-lay-salad-with-chicken-sesame-seeds.jpg' %}"
+/>
+{% comment %}
+<h1>will not appear it is a comment</h1>
+{% endcomment %} {% endblock content %}
